@@ -15,13 +15,10 @@ function forEach(array, fn) {
  Напишите аналог встроенного метода map для работы с массивами
  */
 function map(array, fn) {
-	var mapArr = function(array, fn, thisArg) {
-  var i, length = arr.length, results = [];
-  for (var i = 0; i < length; i++) {
-    results.push(fn.call(thisArg, arr[i], i, arr));
-  }
-  return results;
-};
+	var result = [];
+	for (var i = 0; i < array.lenght; i++){
+		result.push(fn(array[i]));
+	}
 }
 
 /*
@@ -29,6 +26,10 @@ function map(array, fn) {
  Напишите аналог встроенного метода reduce для работы с массивами
  */
 function reduce(array, fn, initial) {
+	var current = initial;
+	for (var i = 0; i < array.length; i++);
+		current = fn(current, array[i]);
+	return current;
 }
 
 /*
